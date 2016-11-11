@@ -15,7 +15,7 @@ body {
 }
 
 .control {
-    margin-top: 80px;
+    margin-top: 40px;
 }
 
 .break {
@@ -23,12 +23,24 @@ body {
 }
 
 .break-time {
-    font-size: 20px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.break-time-title {
+    margin-bottom: 10px;
+    font-size: 30px;
     text-align: center;
 }
 
 .task-time {
-    font-size: 20px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.task-time-title {
+    margin-bottom: 10px;
+    font-size: 30px;
     text-align: center;
 }
 
