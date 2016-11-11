@@ -1,0 +1,90 @@
+html {
+    height: 100%;
+}
+
+body {
+    background-color: #3e3e3e;
+    background-size: cover;
+    color: white;
+}
+
+.title {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 50px;
+}
+
+.control {
+    margin-top: 80px;
+}
+
+.break {
+    margin-top: 20px;
+}
+
+.break-time {
+    font-size: 20px;
+    text-align: center;
+}
+
+.task-time {
+    font-size: 20px;
+    text-align: center;
+}
+
+.custom {
+    width: 100px;
+    height: 40px;
+    font-size: 20px;
+    color: white;
+    border-width: 2px;
+    border-radius: 3px;
+    border-bottom-style: solid;
+    background: rgba(255, 255, 255, 0);
+}
+
+.custom.clicked {
+    background: rgba(255, 255, 255, 0);
+}
+
+.custom.clicked:hover {
+    background: rgba(255, 255, 255, 0);
+}
+
+.custom:hover {
+    background: rgba(255, 255, 255, 0);
+}
+
+.clock {
+    margin-top: 50px;
+}
+
+.clock-time {
+    text-align: center;
+    font-size: 100px;
+}
+
+.task-bar {
+    margin: 10px auto;
+    border-width: 1px;
+    border-radius: 5px;
+    width: 50%;
+    height: 20px;
+    border-style: solid;
+    border-color: white;
+}
+
+.break-bar {
+    margin: 30px auto;
+    border-width: 1px;
+    border-radius: 5px;
+    width: 50%;
+    height: 20px;
+    border-style: solid;
+    border-color: white;
+}
+
+a, a:hover, a:visited {
+    color: white;
+    text-decoration: none;
+}
