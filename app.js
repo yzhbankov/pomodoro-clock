@@ -12,46 +12,53 @@ var taskBar = document.querySelector(".inner-bar");
 var switcher = 1;
 var timeOfBreak = false;
 
-(function () {
-    taskPlus.addEventListener("click", function () {
-        var minuts;
-        if (taskTime.innerText.slice(2, 3) == ":") {
-            minuts = Number(taskTime.innerText.slice(0, 2)) + 1;
-        } else {
-            minuts = Number(taskTime.innerText.slice(0, 1)) + 1;
-        }
-        taskTime.innerText = minuts + ":00";
-        clockTime.innerText = minuts + ":00";
-    });
-    taskMinus.addEventListener("click", function () {
-        var minuts = 0;
-        if (taskTime.innerText.slice(2, 3) == ":") {
-            minuts = Number(taskTime.innerText.slice(0, 2)) - 1;
-        } else if (Number(taskTime.innerText.slice(0, 1)) >= 1) {
-            minuts = Number(taskTime.innerText.slice(0, 1)) - 1;
-        }
-        taskTime.innerText = minuts + ":00";
-        clockTime.innerText = minuts + ":00";
-    });
-    breakPlus.addEventListener("click", function () {
-        var minuts;
-        if (breakTime.innerText.slice(2, 3) == ":") {
-            minuts = Number(breakTime.innerText.slice(0, 2)) + 1;
-        } else {
-            minuts = Number(breakTime.innerText.slice(0, 1)) + 1;
-        }
-        breakTime.innerText = minuts + ":00";
-    });
-    breakMinus.addEventListener("click", function () {
-        var minuts = 0;
-        if (breakTime.innerText.slice(2, 3) == ":") {
-            minuts = Number(breakTime.innerText.slice(0, 2)) - 1;
-        } else if (Number(breakTime.innerText.slice(0, 1)) >= 1) {
-            minuts = Number(breakTime.innerText.slice(0, 1)) - 1;
-        }
-        breakTime.innerText = minuts + ":00";
-    });
-})();
+
+function tPlus() {
+    var minuts;
+    if (taskTime.innerText.slice(2, 3) == ":") {
+        minuts = Number(taskTime.innerText.slice(0, 2)) + 1;
+    } else {
+        minuts = Number(taskTime.innerText.slice(0, 1)) + 1;
+    }
+    taskTime.innerText = minuts + ":00";
+    clockTime.innerText = minuts + ":00";
+}
+
+function tMinus() {
+    var minuts = 0;
+    if (taskTime.innerText.slice(2, 3) == ":") {
+        minuts = Number(taskTime.innerText.slice(0, 2)) - 1;
+    } else if (Number(taskTime.innerText.slice(0, 1)) >= 1) {
+        minuts = Number(taskTime.innerText.slice(0, 1)) - 1;
+    }
+    taskTime.innerText = minuts + ":00";
+    clockTime.innerText = minuts + ":00";
+}
+
+function bPlus() {
+    var minuts;
+    if (breakTime.innerText.slice(2, 3) == ":") {
+        minuts = Number(breakTime.innerText.slice(0, 2)) + 1;
+    } else {
+        minuts = Number(breakTime.innerText.slice(0, 1)) + 1;
+    }
+    breakTime.innerText = minuts + ":00";
+}
+
+function bMinus() {
+    var minuts = 0;
+    if (breakTime.innerText.slice(2, 3) == ":") {
+        minuts = Number(breakTime.innerText.slice(0, 2)) - 1;
+    } else if (Number(breakTime.innerText.slice(0, 1)) >= 1) {
+        minuts = Number(breakTime.innerText.slice(0, 1)) - 1;
+    }
+    breakTime.innerText = minuts + ":00";
+}
+
+taskPlus.addEventListener("click", tPlus);
+taskMinus.addEventListener("click", tMinus);
+breakPlus.addEventListener("click", bPlus);
+breakMinus.addEventListener("click", bMinus);
 
 function time(time) {
     var arr = [];
@@ -68,9 +75,17 @@ function time(time) {
 function timer(duration) {
     var minuts = Number(time(duration)[0]);
     var seconds = Number(time(duration)[1]);
+    taskPlus.removeEventListener("click", tPlus);
+    taskMinus.removeEventListener("click", tMinus);
+    breakPlus.removeEventListener("click", bPlus);
+    breakMinus.removeEventListener("click", bMinus);
     var timerId = setInterval(function () {
         if (switcher % 2 != 0) {
             clearInterval(timerId);
+            taskPlus.addEventListener("click", tPlus);
+            taskMinus.addEventListener("click", tMinus);
+            breakPlus.addEventListener("click", bPlus);
+            breakMinus.addEventListener("click", bMinus);
         } else if ((minuts == 0) && (seconds == 0)) {
             clearInterval(timerId);
             timeOfBreak = !timeOfBreak;

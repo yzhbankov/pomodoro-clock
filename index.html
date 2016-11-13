@@ -13,7 +13,7 @@
 <div class="title">JS Pomodoro Clock</div>
 <div class="control container-fluid">
     <div class="row task">
-        <div class="task-time-title">Task Time</div>
+        <div class="task-time-title">Task length</div>
         <div class="col-md-4"></div>
         <div class="col-md-1">
             <button class="custom task-minus">-</button>
@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="row break">
-        <div class="break-time-title">Break Time</div>
+        <div class="break-time-title">Break length</div>
         <div class="col-md-4"></div>
         <div class="col-md-1">
             <button class="custom break-minus">-</button>
@@ -36,9 +36,17 @@
     </div>
 </div>
 <div class="clock">
-    <a href="#"><div class="clock-time">25:00</div></a>
-    <div class="col-md-2"></div>
-    <div class="col-md-10 outer-bar"><div class="inner-bar"></div></div>
+    <a href="#">
+        <div class="clock-time">25:00</div>
+    </a>
+
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 outer-bar">
+            <div class="inner-bar"></div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
 </div>
 <script src="app.js"></script>
 </body>
