@@ -96,12 +96,14 @@ function timer(duration) {
             }
             if (!timeOfBreak) {
                 var inTime = time(taskTime.innerText);
+                var color = "green";
             } else {
                 var inTime = time(breakTime.innerText);
+                var color = "red";
             }
             var curTime = time(clockTime.innerText);
 
-            progressBar(inTime, curTime);
+            progressBar(inTime, curTime, color);
         }
     }, 1000);
 
@@ -115,12 +117,9 @@ clockTime.addEventListener("click", function () {
     timer(clockTime.innerText);
 });
 
-function progressBar(initTime, currentTime) {
+function progressBar(initTime, currentTime, color) {
     var x = Number(currentTime[0]) * 60 + Number(currentTime[1]);
     var y = Number(initTime[0]) * 60 + Number(initTime[1]);
-    console.log(x);
-    console.log(y);
-
-    var str = "width: " + ((y - x) / y) * 100 + "%";
+    var str = "width: " + ((y - x) / y) * 100 + "%;" + "background-color:" + color + ";";
     taskBar.setAttribute("style", str);
 }
