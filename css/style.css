@@ -76,35 +76,23 @@ body {
     font-size: 100px;
 }
 
-.outer-task-bar {
+.outer-bar {
     margin: 10px auto;
     border-width: 1px;
-    border-radius: 5px;
     width: 50%;
     height: 20px;
     border-style: solid;
     border-color: white;
 }
 
-.inner-task-bar {
+.inner-bar {
     margin: 1px;
     border-width: 0;
-    border-radius: 5px;
     width: 0;
     height: 16px;
     border-style: solid;
     background-color: green;
     border-color: green;
-}
-
-.outer-break-bar {
-    margin: 30px auto;
-    border-width: 1px;
-    border-radius: 5px;
-    width: 50%;
-    height: 20px;
-    border-style: solid;
-    border-color: white;
 }
 
 a, a:hover, a:visited {

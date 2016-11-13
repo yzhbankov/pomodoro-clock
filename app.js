@@ -8,11 +8,11 @@ var taskPlus = document.querySelector(".task-plus");
 var taskMinus = document.querySelector(".task-minus");
 var breakPlus = document.querySelector(".break-plus");
 var breakMinus = document.querySelector(".break-minus");
-var taskBar = document.querySelector(".inner-task-bar");
+var taskBar = document.querySelector(".inner-bar");
 var switcher = 1;
 var timeOfBreak = false;
 
-(function() {
+(function () {
     taskPlus.addEventListener("click", function () {
         var minuts;
         if (taskTime.innerText.slice(2, 3) == ":") {
@@ -75,11 +75,12 @@ function timer(duration) {
             clearInterval(timerId);
             timeOfBreak = !timeOfBreak;
             if (!timeOfBreak) {
-                clockTime.innerText = taskTime.innerText;
+                var inTime = time(taskTime.innerText);
+                timer(taskTime.innerText);
             } else {
-                clockTime.innerText = breakTime.innerText;
+                timer(breakTime.innerText);
+                var inTime = time(breakTime.innerText);
             }
-            timer(clockTime.innerText);
         }
         else {
             if (seconds == 0) {
@@ -93,7 +94,11 @@ function timer(duration) {
             } else {
                 clockTime.innerText = minuts + ":" + seconds;
             }
-            var inTime = time(taskTime.innerText);
+            if (!timeOfBreak) {
+                var inTime = time(taskTime.innerText);
+            } else {
+                var inTime = time(breakTime.innerText);
+            }
             var curTime = time(clockTime.innerText);
 
             progressBar(inTime, curTime);
@@ -110,12 +115,12 @@ clockTime.addEventListener("click", function () {
     timer(clockTime.innerText);
 });
 
-function progressBar(initTime, currentTime){
-    var x = Number(currentTime[0])*60 + Number(currentTime[1]);
-    var y = Number(initTime[0])*60 + Number(initTime[1]);
+function progressBar(initTime, currentTime) {
+    var x = Number(currentTime[0]) * 60 + Number(currentTime[1]);
+    var y = Number(initTime[0]) * 60 + Number(initTime[1]);
     console.log(x);
     console.log(y);
 
-    var str =  "width: " + ((y - x)/y)*100 + "%";
+    var str = "width: " + ((y - x) / y) * 100 + "%";
     taskBar.setAttribute("style", str);
 }
