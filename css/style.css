@@ -110,7 +110,7 @@ a:link, a:hover, a:visited, a:active {
     .title {
         margin-top: 10px;
         text-align: center;
-        font-size: 50px;
+        font-size: 40px;
     }
     .custom {
         width: 100px;
@@ -123,10 +123,10 @@ a:link, a:hover, a:visited, a:active {
         background: rgba(255, 255, 255, 0);
     }
     .control {
-        margin-top: 20px;
+        margin-top: 10px;
     }
     .clock {
-        margin-top: 30px;
+        margin-top: 10px;
     }
     .outer-bar {
         height: 30px;
