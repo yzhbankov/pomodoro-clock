@@ -108,7 +108,7 @@ a:link, a:hover, a:visited, a:active {
 }
 @media screen and (max-width: 740px) {
     .title {
-        margin-top: 30px;
+        margin-top: 10px;
         text-align: center;
         font-size: 50px;
     }
@@ -123,10 +123,10 @@ a:link, a:hover, a:visited, a:active {
         background: rgba(255, 255, 255, 0);
     }
     .control {
-        margin-top: 30px;
+        margin-top: 20px;
     }
     .clock {
-        margin-top: 60px;
+        margin-top: 30px;
     }
     .outer-bar {
         height: 30px;
