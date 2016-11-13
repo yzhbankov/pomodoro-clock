@@ -10,42 +10,46 @@
     <title></title>
 </head>
 <body>
-<div class="title">JS Pomodoro Clock</div>
+<div class="title">Pomodoro Clock</div>
 <div class="control container-fluid">
     <div class="row task">
-        <div class="task-time-title">Task length</div>
-        <div class="col-md-4"></div>
-        <div class="col-md-1">
+        <div class="col-xs-12 task-time-title">Task length</div>
+        <div class="col-md-4 col-xs-0"></div>
+        <div class="col-md-1 col-xs-4">
             <button class="custom task-minus">-</button>
         </div>
-        <div class="col-md-2 task-time">25:00</div>
-        <div class="col-md-1">
+        <div class="col-md-2 col-xs-4 task-time">25:00</div>
+        <div class="col-md-1 col-xs-4">
             <button class="custom task-plus">+</button>
         </div>
     </div>
+
     <div class="row break">
-        <div class="break-time-title">Break length</div>
-        <div class="col-md-4"></div>
-        <div class="col-md-1">
+        <div class="col-xs-12 break-time-title">Break length</div>
+        <div class="col-md-4 col-xs-0"></div>
+        <div class="col-md-1 col-xs-4">
             <button class="custom break-minus">-</button>
         </div>
-        <div class="col-md-2 break-time">5:00</div>
-        <div class="col-md-1">
+        <div class="col-md-2 col-xs-4 break-time">5:00</div>
+        <div class="col-md-1 col-xs-4">
             <button class="custom break-plus">+</button>
         </div>
     </div>
 </div>
+
 <div class="clock">
     <a href="#">
         <div class="clock-time">25:00</div>
     </a>
 
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 outer-bar">
-            <div class="inner-bar"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 col-xs-12 outer-bar">
+                <div class="inner-bar"></div>
+            </div>
+            <div class="col-md-2"></div>
         </div>
-        <div class="col-md-2"></div>
     </div>
 </div>
 <script src="app.js"></script>

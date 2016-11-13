@@ -86,6 +86,7 @@ function timer(duration) {
             taskMinus.addEventListener("click", tMinus);
             breakPlus.addEventListener("click", bPlus);
             breakMinus.addEventListener("click", bMinus);
+            timeOfBreak = false;
         } else if ((minuts == 0) && (seconds == 0)) {
             clearInterval(timerId);
             timeOfBreak = !timeOfBreak;
