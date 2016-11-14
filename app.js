@@ -15,6 +15,7 @@ var timeOfBreak = false;
 
 function tPlus() {
     var minuts;
+    timeOfBreak = false;
     if (taskTime.innerText.slice(2, 3) == ":") {
         minuts = Number(taskTime.innerText.slice(0, 2)) + 1;
     } else {
@@ -26,6 +27,7 @@ function tPlus() {
 
 function tMinus() {
     var minuts = 0;
+    timeOfBreak = false;
     if (taskTime.innerText.slice(2, 3) == ":") {
         minuts = Number(taskTime.innerText.slice(0, 2)) - 1;
     } else if (Number(taskTime.innerText.slice(0, 1)) >= 1) {
@@ -42,6 +44,9 @@ function bPlus() {
     } else {
         minuts = Number(breakTime.innerText.slice(0, 1)) + 1;
     }
+    if (timeOfBreak) {
+        clockTime.innerText = minuts + ":00";
+    }
     breakTime.innerText = minuts + ":00";
 }
 
@@ -51,6 +56,9 @@ function bMinus() {
         minuts = Number(breakTime.innerText.slice(0, 2)) - 1;
     } else if (Number(breakTime.innerText.slice(0, 1)) >= 1) {
         minuts = Number(breakTime.innerText.slice(0, 1)) - 1;
+    }
+    if (timeOfBreak) {
+        clockTime.innerText = minuts + ":00";
     }
     breakTime.innerText = minuts + ":00";
 }
